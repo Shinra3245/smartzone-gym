@@ -7,6 +7,7 @@ import CheckAccess from './pages/CheckAccess'
 import Members from './pages/Members'
 import NewMember from './pages/NewMember'
 import Revenue from './pages/Revenue'
+import Settings from './pages/Settings'
 
 export default function App() {
   const { user, loading } = useAuth()
@@ -38,6 +39,7 @@ export default function App() {
         <Route path="/members" element={<Members />}      />
         <Route path="/new"     element={<NewMember />}    />
         <Route path="/revenue" element={<Revenue />}      />
+        <Route path="/settings" element={<Settings />} />
       </Routes>
     </Layout>
   )

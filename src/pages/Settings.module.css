@@ -1,0 +1,105 @@
+.page { display: flex; flex-direction: column; gap: 24px; max-width: 480px; }
+
+.title { font-size: 24px; font-weight: 600; letter-spacing: -0.02em; }
+.sub   { color: var(--text-2); font-size: 14px; margin-top: -16px; }
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.rowInfo { display: flex; flex-direction: column; gap: 2px; }
+.rowLabel { font-size: 15px; font-weight: 600; color: var(--text); }
+.rowDesc  { font-size: 12px; color: var(--text-3); }
+
+/* ── Mismo patrón de monto que NewMember / MemberModal ───────── */
+.amountControl {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.amountBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s, background 0.15s;
+  flex-shrink: 0;
+}
+.amountBtn:hover  { border-color: var(--border-hover); background: #2a2a2a; }
+.amountBtn:active { transform: scale(0.94); }
+
+.amountDisplay {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--black);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 12px;
+  transition: border-color 0.15s;
+  min-width: 110px;
+  justify-content: center;
+}
+.amountDisplay:focus-within { border-color: var(--border-hover); }
+
+.amountPrefix { font-size: 14px; color: var(--text-3); }
+
+.amountField {
+  width: 70px;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  -moz-appearance: textfield;
+}
+.amountField::-webkit-outer-spin-button,
+.amountField::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* ── Botón de guardar ─────────────────────────────────────────── */
+.saveBtn {
+  padding: 12px;
+  background: var(--green);
+  color: #000;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.saveBtn:hover:not(:disabled) { opacity: 0.85; }
+.saveBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.note {
+  font-size: 12px;
+  color: var(--text-3);
+  line-height: 1.6;
+}
