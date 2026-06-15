@@ -1,0 +1,137 @@
+.page { display: flex; flex-direction: column; gap: 20px; }
+
+.header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.title { font-size: 24px; font-weight: 600; letter-spacing: -0.02em; }
+.count { font-size: 13px; color: var(--text-3); }
+
+.search {
+  padding: 10px 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s;
+  width: 100%;
+}
+.search:focus { border-color: var(--border-hover); }
+.search::placeholder { color: var(--text-3); }
+
+/* Filtros de estado */
+.filters { display: flex; gap: 6px; flex-wrap: wrap; }
+
+.filterBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-2);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.filterBtn:hover { border-color: var(--border-hover); color: var(--text); }
+.filterActive { border-color: var(--green); color: var(--green); background: var(--green-bg); }
+
+.filterCount {
+  font-size: 11px;
+  background: rgba(255,255,255,0.08);
+  padding: 1px 6px;
+  border-radius: 999px;
+}
+.filterActive .filterCount { background: rgba(34,197,94,0.2); }
+
+/* Lista */
+.list { display: flex; flex-direction: column; gap: 8px; }
+
+.empty {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-3);
+  font-size: 14px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-lg);
+}
+
+/* ── Franja de alerta de vencimiento ─────────────────────────── */
+.alertBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  background: var(--amber-bg);
+  border: 1px solid var(--amber);
+  border-radius: var(--radius);
+  animation: slideDown 0.2s ease;
+}
+
+.alertLeft {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.alertIcon { font-size: 18px; line-height: 1.4; }
+
+.alertTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--amber);
+}
+
+.alertNames {
+  font-size: 12px;
+  color: var(--text-3);
+  margin-top: 2px;
+}
+
+.alertBtn {
+  flex-shrink: 0;
+  padding: 6px 14px;
+  background: none;
+  border: 1px solid var(--amber);
+  border-radius: var(--radius);
+  color: var(--amber);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+.alertBtn:hover { background: rgba(245,158,11,0.1); }
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ── Monto al registrar ──────────────────────────────────────── */
+.amountRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.amountPrefix {
+  font-size: 16px;
+  color: var(--text-3);
+  flex-shrink: 0;
+}
+
+.amountInput { flex: 1; }
+
+.amountHint {
+  font-size: 12px;
+  color: var(--text-3);
+  white-space: nowrap;
+  flex-shrink: 0;
+}

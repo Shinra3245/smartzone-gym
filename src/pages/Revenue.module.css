@@ -1,0 +1,313 @@
+.page  { display: flex; flex-direction: column; gap: 24px; }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.title { font-size: 24px; font-weight: 600; letter-spacing: -0.02em; }
+
+/* Toggle semana / mes */
+.toggle {
+  display: flex;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 3px;
+  gap: 3px;
+}
+
+.toggleBtn {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 7px;
+  background: none;
+  color: var(--text-2);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.toggleBtn:hover { color: var(--text); }
+.toggleActive { background: var(--surface); color: var(--text); font-weight: 500; }
+
+.periodLabel {
+  font-size: 13px;
+  color: var(--text-3);
+  text-transform: capitalize;
+  margin-top: -12px;
+}
+
+/* Total */
+.totalCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.totalLabel  { font-size: 12px; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.05em; }
+.totalAmount { font-size: 48px; font-weight: 600; letter-spacing: -0.03em; color: var(--green); line-height: 1.1; }
+.totalSub    { font-size: 13px; color: var(--text-3); }
+
+/* Desglose por plan */
+.breakdown {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.breakdownCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.breakdownCard.green  { border-color: var(--green); }
+.breakdownCard.amber  { border-color: var(--amber); }
+.breakdownCard.blue   { border-color: #3b82f6;      }
+
+.breakdownPlan   { font-size: 11px; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.05em; }
+.breakdownAmount { font-size: 22px; font-weight: 600; letter-spacing: -0.02em; }
+.breakdownCount  { font-size: 11px; color: var(--text-3); }
+
+.green .breakdownAmount { color: var(--green); }
+.amber .breakdownAmount { color: var(--amber); }
+.blue  .breakdownAmount { color: #3b82f6;      }
+
+/* Barra proporcional */
+.breakdownBar {
+  height: 3px;
+  background: var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+.breakdownFill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.5s ease;
+}
+.green .breakdownFill { background: var(--green); }
+.amber .breakdownFill { background: var(--amber); }
+.blue  .breakdownFill { background: #3b82f6;      }
+
+/* Lista de pagos */
+.listSection { display: flex; flex-direction: column; gap: 12px; }
+
+.listTitle { font-size: 13px; font-weight: 500; color: var(--text-2); }
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.paymentRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  background: var(--card);
+  border-radius: var(--radius);
+  gap: 12px;
+}
+
+.paymentLeft   { display: flex; flex-direction: column; gap: 2px; }
+.paymentName   { font-size: 14px; font-weight: 500; color: var(--text); }
+.paymentMeta   { font-size: 12px; color: var(--text-3); }
+.paymentAmount { font-size: 15px; font-weight: 600; color: var(--green); white-space: nowrap; }
+
+.empty {
+  padding: 32px;
+  text-align: center;
+  color: var(--text-3);
+  font-size: 14px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+}
+
+@media (max-width: 480px) {
+  .breakdown { grid-template-columns: 1fr; }
+}
+
+/* ── Tarjetas de miembro con dropdown ───────────────────────── */
+.memberCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.15s;
+}
+.memberCard:has(.memberRow:hover) { border-color: var(--border-hover); }
+
+.memberRow {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.memberAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-2);
+  flex-shrink: 0;
+}
+
+.memberInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.memberName {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.memberMeta { font-size: 12px; color: var(--text-3); }
+
+.memberRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.memberTotal {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.chevron {
+  font-size: 9px;
+  color: var(--text-3);
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+.chevronOpen { transform: rotate(180deg); }
+
+/* Dropdown interior */
+.dropdown {
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  animation: expandDown 0.15s ease;
+}
+
+.dropdownRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px 10px 64px;  /* 64px = avatar width + gaps, alinea con el nombre */
+  border-bottom: 1px solid var(--border);
+}
+.dropdownRow:last-child { border-bottom: none; }
+
+.dropdownPlan {
+  font-size: 13px;
+  color: var(--text-2);
+  min-width: 56px;
+}
+
+.dropdownDate {
+  flex: 1;
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+.dropdownAmount {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* Fila de subtotal cuando hay varios pagos */
+.dropdownSubtotal {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 16px 10px 64px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-3);
+}
+.dropdownSubtotal span:last-child { color: var(--green); }
+
+@keyframes expandDown {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ── Encabezado con botón de descarga ───────────────────────── */
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.downloadBtn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-2);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.downloadBtn:hover:not(:disabled) {
+  border-color: var(--green);
+  color: var(--green);
+}
+.downloadBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.downloadSpinner {
+  display: inline-block;
+  animation: spin 0.8s linear infinite;
+  font-size: 15px;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}

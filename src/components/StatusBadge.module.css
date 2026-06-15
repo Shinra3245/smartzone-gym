@@ -1,0 +1,15 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.md { font-size: 13px; padding: 4px 10px; }
+.lg { font-size: 15px; padding: 8px 16px; }
+
+.active   { background: var(--green-bg); color: var(--green); }
+.expiring { background: var(--amber-bg); color: var(--amber); }
+.expired  { background: var(--red-bg);   color: var(--red);   }

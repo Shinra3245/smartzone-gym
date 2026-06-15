@@ -1,0 +1,179 @@
+.page { display: flex; flex-direction: column; gap: 24px; max-width: 480px; }
+
+.title { font-size: 24px; font-weight: 600; letter-spacing: -0.02em; }
+.sub   { color: var(--text-2); font-size: 14px; margin-top: -16px; }
+
+/* Formulario */
+.form { display: flex; flex-direction: column; gap: 20px; }
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+
+.label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-2);
+}
+.optional { font-weight: 400; color: var(--text-3); }
+
+.input {
+  padding: 11px 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.input:focus { border-color: var(--border-hover); }
+.input::placeholder { color: var(--text-3); }
+
+/* Plan selector */
+.planGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+
+.planCard {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s;
+}
+.planCard:hover { border-color: var(--border-hover); }
+.planSelected   { border-color: var(--green); background: var(--green-bg); }
+
+.planLabel {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+}
+.planSelected .planLabel { color: var(--green); }
+
+.planDesc { font-size: 11px; color: var(--text-3); }
+
+/* Error */
+.error {
+  font-size: 13px;
+  color: var(--red);
+  background: var(--red-bg);
+  padding: 10px 14px;
+  border-radius: var(--radius);
+}
+
+/* Acciones */
+.actions { display: flex; gap: 8px; }
+
+.cancelBtn {
+  flex: 1;
+  padding: 12px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-2);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.cancelBtn:hover { border-color: var(--border-hover); color: var(--text); }
+
+.submitBtn {
+  flex: 2;
+  padding: 12px;
+  background: var(--green);
+  color: #000;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.submitBtn:hover { opacity: 0.85; }
+
+/* Confirmación */
+.success {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  background: var(--green-bg);
+  border: 1px solid var(--green);
+  border-radius: var(--radius-lg);
+  color: var(--green);
+  font-size: 15px;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease;
+}
+.successIcon { font-size: 24px; font-weight: 700; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; } }
+
+
+/* ── Monto al registrar ──────────────────────────────────────── */
+.amountControl {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.amountBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s, background 0.15s;
+  flex-shrink: 0;
+}
+.amountBtn:hover  { border-color: var(--border-hover); background: #2a2a2a; }
+.amountBtn:active { transform: scale(0.94); }
+
+.amountDisplay {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--black);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 12px;
+  transition: border-color 0.15s;
+  min-width: 110px;
+  justify-content: center;
+}
+.amountDisplay:focus-within { border-color: var(--border-hover); }
+
+.amountPrefix { font-size: 14px; color: var(--text-3); }
+
+.amountField {
+  width: 70px;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  -moz-appearance: textfield;
+}
+.amountField::-webkit-outer-spin-button,
+.amountField::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.amountHint {
+  font-size: 12px;
+  color: var(--text-3);
+  margin-top: 2px;
+}

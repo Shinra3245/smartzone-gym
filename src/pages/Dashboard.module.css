@@ -1,0 +1,112 @@
+.page { display: flex; flex-direction: column; gap: 28px; }
+
+.header { display: flex; flex-direction: column; gap: 4px; }
+.date  { font-size: 13px; color: var(--text-3); text-transform: capitalize; }
+.title { font-size: 26px; font-weight: 600; letter-spacing: -0.02em; }
+
+/* Grid de tarjetas */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 18px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s, transform 0.1s;
+}
+.card:hover { transform: translateY(-2px); }
+
+.card.green  { border-color: var(--green);  }
+.card.amber  { border-color: var(--amber);  }
+.card.red    { border-color: var(--red);    }
+
+.cardLabel {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cardValue {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.green .cardValue { color: var(--green); }
+.amber .cardValue { color: var(--amber); }
+.red   .cardValue { color: var(--red);   }
+
+/* Barra de porcentaje */
+.bar {
+  height: 3px;
+  background: var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.barFill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.6s ease;
+}
+.green .barFill { background: var(--green); }
+.amber .barFill { background: var(--amber); }
+.red   .barFill { background: var(--red);   }
+
+.cardPct { font-size: 11px; color: var(--text-3); }
+
+/* Alertas */
+.alertBox {
+  background: var(--amber-bg);
+  border: 1px solid var(--amber);
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.alertTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--amber);
+}
+.alertList  { display: flex; flex-direction: column; gap: 8px; }
+.alertItem  { display: flex; justify-content: space-between; align-items: center; }
+.alertName  { font-size: 14px; color: var(--text); }
+.alertPlan  { font-size: 12px; color: var(--text-3); }
+
+/* Accesos rápidos */
+.actions { display: flex; gap: 10px; }
+
+.actionBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-2);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.actionBtn:hover { border-color: var(--border-hover); color: var(--text); }
+
+.actionIcon { font-size: 18px; }
+
+@media (max-width: 480px) {
+  .grid { grid-template-columns: 1fr; }
+}

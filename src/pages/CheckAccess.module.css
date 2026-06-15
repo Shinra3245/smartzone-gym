@@ -1,0 +1,104 @@
+.page { display: flex; flex-direction: column; gap: 24px; }
+
+.title { font-size: 24px; font-weight: 600; letter-spacing: -0.02em; }
+.sub   { color: var(--text-2); font-size: 14px; margin-top: -16px; }
+
+/* Formulario de búsqueda */
+.form  { display: flex; gap: 8px; }
+
+.input {
+  flex: 1;
+  padding: 12px 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.input:focus { border-color: var(--border-hover); }
+.input::placeholder { color: var(--text-3); }
+
+.btn {
+  padding: 12px 20px;
+  background: var(--green);
+  color: #000;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+}
+.btn:hover { opacity: 0.85; }
+
+/* Tarjeta de resultado */
+.resultCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  border: 1px solid;
+  text-align: center;
+  animation: fadeIn 0.2s ease;
+}
+
+.resultCard.active   { background: var(--green-bg); border-color: var(--green); }
+.resultCard.expiring { background: var(--amber-bg); border-color: var(--amber); }
+.resultCard.expired  { background: var(--red-bg);   border-color: var(--red);   }
+
+/* Ícono circular grande — el elemento visual más importante de la app */
+.bigIcon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: 700;
+  font-family: var(--mono);
+}
+.icon_active   { background: var(--green); color: #000; }
+.icon_expiring { background: var(--amber); color: #000; }
+.icon_expired  { background: var(--red);   color: #fff; }
+
+.resultBody { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+
+.memberName { font-size: 22px; font-weight: 600; color: var(--text); }
+.expiryText { font-size: 14px; color: var(--text-2); }
+.planText   { font-size: 13px; color: var(--text-3); }
+
+.detailBtn {
+  padding: 10px 24px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.detailBtn:hover { background: rgba(255,255,255,0.12); }
+
+/* No encontrado */
+.notFound {
+  text-align: center;
+  padding: 40px 24px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.notFoundIcon { font-size: 32px; }
+.notFoundText { font-size: 15px; color: var(--text-2); }
+.notFoundSub  { font-size: 13px; color: var(--text-3); }
+.notFoundSub a { color: var(--green); text-decoration: none; }
+.notFoundSub a:hover { text-decoration: underline; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }

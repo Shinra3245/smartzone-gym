@@ -1,0 +1,107 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brandIcon { font-size: 32px; line-height: 1; }
+
+.brandName { font-size: 18px; font-weight: 600; color: var(--text); }
+.brandSub  { font-size: 13px; color: var(--text-2); margin-top: 2px; }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+
+.label { font-size: 13px; font-weight: 500; color: var(--text-2); }
+
+.input {
+  padding: 12px 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.input:focus { border-color: var(--border-hover); }
+.input::placeholder { color: var(--text-3); }
+
+.error {
+  font-size: 13px;
+  color: var(--red);
+  background: var(--red-bg);
+  padding: 10px 14px;
+  border-radius: var(--radius);
+}
+
+.submitBtn {
+  padding: 12px;
+  background: var(--green);
+  color: #000;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.submitBtn:hover:not(:disabled) { opacity: 0.85; }
+.submitBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+
+
+/* ── Campo de contraseña con botón de mostrar/ocultar ────────── */
+.passwordWrapper {
+  position: relative;
+  display: flex;
+}
+
+.passwordWrapper .input {
+  width: 100%;
+  padding-right: 44px;  /* espacio para el botón del ojo */
+}
+
+.eyeBtn {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--text-3);
+  cursor: pointer;
+  border-radius: var(--radius);
+  transition: color 0.15s, background 0.15s;
+}
+.eyeBtn:hover { color: var(--text); background: rgba(6, 163, 45, 0.796); }
